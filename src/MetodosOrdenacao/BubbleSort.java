@@ -4,8 +4,7 @@ public class BubbleSort {
 
 	public int[] bubbleSort( int[] vetBubble){
 		
-		int temp;
-		int contador = 0;
+		int count = 0;
 		
 		for( int i = vetBubble.length; i >= 1; i-- ){
 			
@@ -14,7 +13,7 @@ public class BubbleSort {
 					int aux = vetBubble[j];
 					vetBubble[j] = vetBubble[j-1];
 					vetBubble[j-1]=aux;
-					contador = contador + 1;
+					count = count + 1;
 				}
 			}
 		}
