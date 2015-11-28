@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
@@ -20,6 +21,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Relatorio extends JFrame {
 
@@ -46,6 +49,7 @@ public class Relatorio extends JFrame {
 	 * Create the frame.
 	 */
 	public Relatorio() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 280);
 		contentPane = new JPanel();
@@ -55,15 +59,20 @@ public class Relatorio extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		
 		JButton btnExecutar = new JButton("Executar");
+		btnExecutar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnExecutar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 			}
 		});
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("30 Elementos");
+		JRadioButton rdbtn30 = new JRadioButton("30 Elementos");
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("20 Mil Elementos");
+		JRadioButton rdbtn20000 = new JRadioButton("20 Mil Elementos");
 		
 		JLabel lblTamanhoDaEntrada = new JLabel("Tamanho da Entrada:");
 		
@@ -73,7 +82,7 @@ public class Relatorio extends JFrame {
 		
 		JRadioButton rdbtnInversamenteOrdenado = new JRadioButton("Inversamente Ordenado");
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Grupos 10% iguais");
+		JRadioButton rdbtnGrupo = new JRadioButton("Grupos 10% iguais");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -85,13 +94,13 @@ public class Relatorio extends JFrame {
 							.addContainerGap())
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(rdbtnNewRadioButton)
-								.addComponent(rdbtnNewRadioButton_1)
+								.addComponent(rdbtn30)
+								.addComponent(rdbtn20000)
 								.addComponent(lblTamanhoDaEntrada)
 								.addComponent(lblNewLabel)
 								.addComponent(rdbtnRandom)
 								.addComponent(rdbtnInversamenteOrdenado)
-								.addComponent(rdbtnNewRadioButton_2))
+								.addComponent(rdbtnGrupo))
 							.addPreferredGap(ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
 							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 339, GroupLayout.PREFERRED_SIZE))))
 		);
@@ -108,9 +117,9 @@ public class Relatorio extends JFrame {
 							.addGap(16)
 							.addComponent(lblTamanhoDaEntrada)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(rdbtnNewRadioButton)
+							.addComponent(rdbtn30)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(rdbtnNewRadioButton_1)
+							.addComponent(rdbtn20000)
 							.addGap(18)
 							.addComponent(lblNewLabel)
 							.addPreferredGap(ComponentPlacement.RELATED)
@@ -118,7 +127,7 @@ public class Relatorio extends JFrame {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(rdbtnInversamenteOrdenado)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(rdbtnNewRadioButton_2)))
+							.addComponent(rdbtnGrupo)))
 					.addContainerGap(58, Short.MAX_VALUE))
 		);
 		
@@ -133,5 +142,16 @@ public class Relatorio extends JFrame {
 		table.getColumnModel().getColumn(1).setPreferredWidth(112);
 		scrollPane.setViewportView(table);
 		contentPane.setLayout(gl_contentPane);
+		ButtonGroup qtdDeDados=new ButtonGroup();
+		qtdDeDados.add(rdbtn30);
+		qtdDeDados.add(rdbtn20000);
+		
+		ButtonGroup metodoOrdenacao=new ButtonGroup();
+		metodoOrdenacao.add(rdbtnGrupo);
+		metodoOrdenacao.add(rdbtnInversamenteOrdenado);
+		metodoOrdenacao.add(rdbtnRandom);
+		
 	}
+	
+	
 }
