@@ -1,10 +1,14 @@
 package MetodosOrdenacao;
 
+import Model.PerformanceDoMetodo;
+
 public class BubbleSort {
 
-	public int[] bubbleSort( int[] vetBubble){
+	public PerformanceDoMetodo bubbleSort( int[] vetBubble){
+		PerformanceDoMetodo bubbleSort = new PerformanceDoMetodo();
 		
-		int count = 0;
+		long inicio = System.currentTimeMillis(); 
+		int trocas = 0;
 		
 		for( int i = vetBubble.length; i >= 1; i-- ){
 			
@@ -13,13 +17,15 @@ public class BubbleSort {
 					int aux = vetBubble[j];
 					vetBubble[j] = vetBubble[j-1];
 					vetBubble[j-1]=aux;
-					count = count + 1;
+					trocas ++;
 				}
 			}
 		}
-		
-		
-		return vetBubble;
+		long fim = System.currentTimeMillis(); 
+		bubbleSort.setTempeExecucao(fim-inicio);
+		bubbleSort.setQtdTrocas(trocas);
+		bubbleSort.setNomeAlgoritmo("Bubble Sort");
+		return bubbleSort;
 	}
 	
 	public int[] invertBubleSort(int[] vetBubble){

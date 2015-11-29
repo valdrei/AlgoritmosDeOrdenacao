@@ -3,7 +3,7 @@ package Model;
 public class PerformanceDoMetodo {
 	
 	private int qtdTrocas;
-	private int tempeExecucao;
+	private long tempeExecucao;
 	private String nomeAlgoritmo;
 	
 	public PerformanceDoMetodo(){
@@ -20,11 +20,11 @@ public class PerformanceDoMetodo {
 		this.qtdTrocas = qtdTrocas;
 	}
 
-	public int getTempeExecucao() {
+	public long getTempeExecucao() {
 		return tempeExecucao;
 	}
 
-	public void setTempeExecucao(int tempeExecucao) {
+	public void setTempeExecucao(long tempeExecucao) {
 		this.tempeExecucao = tempeExecucao;
 	}
 
