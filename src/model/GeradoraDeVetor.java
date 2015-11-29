@@ -1,4 +1,4 @@
-package Controller;
+package model;
 
 import java.util.Random;
 
@@ -9,7 +9,7 @@ public class GeradoraDeVetor {
 	int[] vetor;
 	int qtd;
 	
-	public GeradoraDeVetor(int qtd, String metodo){
+	public GeradoraDeVetor(int qtd){
 		
 		this.qtd=qtd;
 		
