@@ -1,10 +1,14 @@
-package view;
+package View;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controller.ExecutoraTestes;
+import Model.PerformanceTable;
+
 import javax.swing.JOptionPane;
 import javax.naming.ldap.Rdn;
 import javax.swing.ButtonGroup;
@@ -12,10 +16,6 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import controller.ExecutoraTestes;
-
-import model.PerformanceTable;
-
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 

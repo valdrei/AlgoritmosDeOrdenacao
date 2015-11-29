@@ -1,8 +1,14 @@
 package MetodosOrdenacao;
 
+import Model.PerformanceDoMetodo;
+
 public class InsertionSort {
 
-	public int[] insertionSort( int[] vetInsert){
+	public PerformanceDoMetodo insertionSort( int[] vetInsert){
+		PerformanceDoMetodo insertionSort = new PerformanceDoMetodo();
+		
+		long inicio = System.currentTimeMillis(); 
+		int trocas = 0;
 		
 		for(int i = 1; i < vetInsert.length; i++){
 			int temp = vetInsert[i];
@@ -11,8 +17,13 @@ public class InsertionSort {
 				vetInsert[j+1] = vetInsert[j];
 				
 			vetInsert[j+1] = temp;
-			
+			trocas++;
 		}
-		return vetInsert;
+		long fim = System.currentTimeMillis();
+		insertionSort.setTempeExecucao(fim-inicio);
+		insertionSort.setQtdTrocas(trocas);
+		insertionSort.setNomeAlgoritmo("Insertion Sort");
+		
+		return insertionSort;
 	}
 }
