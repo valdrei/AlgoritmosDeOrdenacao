@@ -2,15 +2,28 @@ package MetodosOrdenacao;
 
 import java.util.concurrent.SynchronousQueue;
 
+import Model.PerformanceDoMetodo;
+
 public class QuickSort {
 	
-	public static int[] sort( int[] vetQuick){
+	public  PerformanceDoMetodo sort( int[] vetQuick){
+		PerformanceDoMetodo quickSort = new PerformanceDoMetodo();
+		
+		long inicio = System.currentTimeMillis(); 
+		int trocas = 0;
+		
 		quickSort(vetQuick, 0, vetQuick.length -1 );
 		
-		return vetQuick;
+		long fim = System.currentTimeMillis();
+		quickSort.setTempeExecucao(fim-inicio);
+		quickSort.setQtdTrocas(trocas);
+		quickSort.setNomeAlgoritmo("Quick Sort");
+		
+		
+		return quickSort;
 	}
 	
-	public static int partition( int[] vetQuick, int left, int right){
+	public  int partition( int[] vetQuick, int left, int right){
 		
 		int i = left, j = right;
 		int pivot = vetQuick[(left + right) / 2];
@@ -32,7 +45,7 @@ public class QuickSort {
 	}
 	
 	
-	public static void quickSort(int[] vetQuick, int left, int right){
+	public  void quickSort(int[] vetQuick, int left, int right){
 		
 		
 			int index = partition(vetQuick, left, right);
@@ -44,14 +57,6 @@ public class QuickSort {
 	}
 	
 	
-	public static void main(String[] args) {
-		int[] vet = {2,5,4,8,6,8,1,3};
-		QuickSort test = new QuickSort();
-		int[] sorted = test.sort(vet);
-		for(int i:sorted){
-			System.out.print(i+",");
-		}
-		
-	}
+	
 	
 }

@@ -1,18 +1,30 @@
 package MetodosOrdenacao;
 
+import Model.PerformanceDoMetodo;
+
 public class MergeSort {
 
 	private int[] array;
     private int[] tempMergArr;
     private int length;
 	
-	public int[] sort(int[] vetMerge) {
+	public PerformanceDoMetodo sort(int[] vetMerge) {
+		PerformanceDoMetodo mergeSrot = new PerformanceDoMetodo();
+		
+		long inicio = System.currentTimeMillis(); 
+		int trocas = 0;
+		
         this.array = vetMerge;
         this.length = vetMerge.length;
         this.tempMergArr = new int[length];
         doMergeSort(0, length - 1);
         
-        return vetMerge;
+        long fim = System.currentTimeMillis();
+        mergeSrot.setTempeExecucao(fim-inicio);
+		mergeSrot.setQtdTrocas(trocas);
+		mergeSrot.setNomeAlgoritmo("Merge Sort");
+        return mergeSrot;
+       
     }
  
     private void doMergeSort(int lowerIndex, int higherIndex) {
