@@ -6,11 +6,12 @@ import Model.PerformanceDoMetodo;
 
 public class QuickSort {
 	
+	private int trocas = 0;
 	public  PerformanceDoMetodo sort( int[] vetQuick){
 		PerformanceDoMetodo quickSort = new PerformanceDoMetodo();
 		
 		long inicio = System.currentTimeMillis(); 
-		int trocas = 0;
+		
 		
 		quickSort(vetQuick, 0, vetQuick.length -1 );
 		
@@ -34,6 +35,7 @@ public class QuickSort {
 			while( vetQuick[j] > pivot)
 				j--;
 			if( i<= j ){
+				trocas++;
 				int temp = vetQuick[i];
 				vetQuick[i] = vetQuick[j];
 				vetQuick[j] = temp;

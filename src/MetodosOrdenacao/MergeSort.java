@@ -7,17 +7,17 @@ public class MergeSort {
 	private int[] array;
     private int[] tempMergArr;
     private int length;
-	
+	private int trocas = 0;
 	public PerformanceDoMetodo sort(int[] vetMerge) {
 		PerformanceDoMetodo mergeSrot = new PerformanceDoMetodo();
 		
 		long inicio = System.currentTimeMillis(); 
-		int trocas = 0;
+		
 		
         this.array = vetMerge;
         this.length = vetMerge.length;
         this.tempMergArr = new int[length];
-        doMergeSort(0, length - 1);
+        mergeSort(0, length - 1);
         
         long fim = System.currentTimeMillis();
         mergeSrot.setTempeExecucao(fim-inicio);
@@ -27,14 +27,15 @@ public class MergeSort {
        
     }
  
-    private void doMergeSort(int lowerIndex, int higherIndex) {
+    private void mergeSort(int lowerIndex, int higherIndex) {
          
         if (lowerIndex < higherIndex) {
+        	trocas++;
             int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
             // Below step sorts the left side of the array
-            doMergeSort(lowerIndex, middle);
+            mergeSort(lowerIndex, middle);
             // Below step sorts the right side of the array
-            doMergeSort(middle + 1, higherIndex);
+            mergeSort(middle + 1, higherIndex);
             // Now merge both sides
             mergeParts(lowerIndex, middle, higherIndex);
         }
