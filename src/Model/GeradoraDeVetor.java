@@ -32,7 +32,6 @@ public class GeradoraDeVetor {
 		public int[] vetorInverOrdenado(){
 			//Cria os objetos utilizados
 			BubbleSort bubble=new BubbleSort();
-			Random random=new Random();
 			//Inicia um vetor randomico
 			vetor=this.vetorRandom();
 			//Retorna o vertor ordenado inversamente	
@@ -44,9 +43,12 @@ public class GeradoraDeVetor {
 		Random random=new Random();
 		vetor=new int[qtd];
 		
-		int j=0;
+
 		int contador=0;
+		int j=contador;
 		int partes=qtd/10;
+		
+		System.out.println("Numero de partes:"+partes);
 		
 		for(int i=0;i<10;i++){
 			

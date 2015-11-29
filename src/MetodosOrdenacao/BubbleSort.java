@@ -1,5 +1,7 @@
 package MetodosOrdenacao;
 
+import java.time.Period;
+
 import Model.PerformanceDoMetodo;
 
 public class BubbleSort {
@@ -7,7 +9,7 @@ public class BubbleSort {
 	public PerformanceDoMetodo bubbleSort( int[] vetBubble){
 		PerformanceDoMetodo bubbleSort = new PerformanceDoMetodo();
 		
-		long inicio = System.currentTimeMillis(); 
+		long inicio = System.nanoTime(); 
 		int trocas = 0;
 		
 		for( int i = vetBubble.length; i >= 1; i-- ){
@@ -21,10 +23,11 @@ public class BubbleSort {
 				}
 			}
 		}
-		long fim = System.currentTimeMillis(); 
+		long fim = System.nanoTime(); 
 		bubbleSort.setTempeExecucao(fim-inicio);
 		bubbleSort.setQtdTrocas(trocas);
 		bubbleSort.setNomeAlgoritmo("Bubble Sort");
+		
 		return bubbleSort;
 	}
 	

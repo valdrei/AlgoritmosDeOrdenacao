@@ -7,7 +7,7 @@ public class InsertionSort {
 	public PerformanceDoMetodo insertionSort( int[] vetInsert){
 		PerformanceDoMetodo insertionSort = new PerformanceDoMetodo();
 		
-		long inicio = System.currentTimeMillis(); 
+		long inicio = System.nanoTime(); 
 		int trocas = 0;
 		
 		for(int i = 1; i < vetInsert.length; i++){
@@ -19,7 +19,7 @@ public class InsertionSort {
 			vetInsert[j+1] = temp;
 			trocas++;
 		}
-		long fim = System.currentTimeMillis();
+		long fim = System.nanoTime();
 		insertionSort.setTempeExecucao(fim-inicio);
 		insertionSort.setQtdTrocas(trocas);
 		insertionSort.setNomeAlgoritmo("Insertion Sort");

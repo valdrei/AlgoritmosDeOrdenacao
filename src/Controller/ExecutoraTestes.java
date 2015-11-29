@@ -28,7 +28,7 @@ public class ExecutoraTestes {
 		this.metodo=metodo;
 		testes			=new ArrayList<PerformanceDoMetodo>();
 		gdv				=new GeradoraDeVetor(qtd);
-		insertionsort	=new InsertionSort();
+		bubblesort	=new BubbleSort();
 		mergeSort		=new MergeSort();
 		insertionsort	=new InsertionSort();
 		quicksort		=new QuickSort();
@@ -44,8 +44,10 @@ public class ExecutoraTestes {
 		
 		getVetor(metodo);
 		
-		
-		
+		testes.add(insertionsort.insertionSort(vetor));
+		testes.add(mergeSort.sort(vetor));
+		testes.add(bubblesort.bubbleSort(vetor));
+		testes.add(quicksort.sort(vetor));
 		
 	}
 	
@@ -59,7 +61,7 @@ public class ExecutoraTestes {
 		case "invert":
 			vetor= gdv.vetorInverOrdenado();
 			break;
-		case "groupo":
+		case "grupo":
 			vetor= gdv.vetorGroup();
 			break;
 			default:

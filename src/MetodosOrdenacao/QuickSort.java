@@ -10,12 +10,12 @@ public class QuickSort {
 	public  PerformanceDoMetodo sort( int[] vetQuick){
 		PerformanceDoMetodo quickSort = new PerformanceDoMetodo();
 		
-		long inicio = System.currentTimeMillis(); 
+		long inicio = System.nanoTime(); 
 		
 		
 		quickSort(vetQuick, 0, vetQuick.length -1 );
 		
-		long fim = System.currentTimeMillis();
+		long fim = System.nanoTime();
 		quickSort.setTempeExecucao(fim-inicio);
 		quickSort.setQtdTrocas(trocas);
 		quickSort.setNomeAlgoritmo("Quick Sort");

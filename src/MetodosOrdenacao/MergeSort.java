@@ -11,7 +11,7 @@ public class MergeSort {
 	public PerformanceDoMetodo sort(int[] vetMerge) {
 		PerformanceDoMetodo mergeSrot = new PerformanceDoMetodo();
 		
-		long inicio = System.currentTimeMillis(); 
+		long inicio = System.nanoTime(); 
 		
 		
         this.array = vetMerge;
@@ -19,7 +19,7 @@ public class MergeSort {
         this.tempMergArr = new int[length];
         mergeSort(0, length - 1);
         
-        long fim = System.currentTimeMillis();
+        long fim = System.nanoTime();
         mergeSrot.setTempeExecucao(fim-inicio);
 		mergeSrot.setQtdTrocas(trocas);
 		mergeSrot.setNomeAlgoritmo("Merge Sort");

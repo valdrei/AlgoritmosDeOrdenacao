@@ -45,7 +45,15 @@ public class PerformanceTable extends AbstractTableModel{
 		case ALGORITMO: 
 			return pm.getNomeAlgoritmo();
 		case TEMPOEXECUCAO:
-			return pm.getTempeExecucao();
+			
+			if (pm.getTempeExecucao() <= 1000000) {
+				return (pm.getTempeExecucao() + " Nanosec");
+			} else if (pm.getTempeExecucao() <= 1000000000) {
+				return ((pm.getTempeExecucao() / 1000000) + " Milisec");
+			} else {
+				return ((pm.getTempeExecucao() / 1000000000) + " Sec");
+			}
+			 
 		case QTDTROCA:
 			return pm.getQtdTrocas();
 			default:
